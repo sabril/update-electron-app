@@ -82,7 +82,10 @@ function initUpdater (opts) {
     }
 
     dialog.showMessageBox(dialogOpts, (response) => {
-      if (response === 0) autoUpdater.quitAndInstall()
+      if (response === 0) {
+        autoUpdater.quitAndInstall()
+        app.quit()
+      }
     })
   })
 
